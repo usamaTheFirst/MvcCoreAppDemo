@@ -36,12 +36,20 @@ namespace MvcCoreApp.Controllers
         //POST
         [HttpPost]
       
-        public IActionResult Create(ChangeRequest obj)
+        public IActionResult Create(ChangeRequest obj , int status)
         {
             if(ModelState.IsValid)
             {
                 obj.Status = ApprovalStatus.Pending;
-                obj.SubmissionStatus = SubmissionStatus.Submitted;
+                if(status == 0)
+                {
+                    obj.SubmissionStatus = SubmissionStatus.Draft;
+                }
+                else
+                {
+                    obj.SubmissionStatus = SubmissionStatus.Submitted;
+
+                }
                 _db.ChangeRequests.Add(obj);
                 _db.SaveChanges();
                 Console.Write("Test");
