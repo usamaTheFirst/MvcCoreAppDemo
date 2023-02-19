@@ -26,6 +26,7 @@ namespace MvcCoreApp.Controllers
         {
             return View();
         }
+        //GET
         public IActionResult Create()
         {
 
@@ -37,11 +38,67 @@ namespace MvcCoreApp.Controllers
       
         public IActionResult Create(ChangeRequest obj)
         {
-            obj.Status = ApprovalStatus.Pending;
-            _db.ChangeRequests.Add(obj);
-            _db.SaveChanges();
-            Console.Write("Test");
-            return RedirectToAction("Index");
+            if(ModelState.IsValid)
+            {
+                obj.Status = ApprovalStatus.Pending;
+                obj.SubmissionStatus = SubmissionStatus.Submitted;
+                _db.ChangeRequests.Add(obj);
+                _db.SaveChanges();
+                Console.Write("Test");
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+        //GET
+        public IActionResult View(int? id)
+        {
+
+
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            var ChangeRequestFromDb = _db.ChangeRequests.Find(id);
+            if (ChangeRequestFromDb == null)
+            {
+                return NotFound();
+            }
+            return View(ChangeRequestFromDb);
+        }
+
+
+        //GET
+        public IActionResult Edit(int? id)
+        {
+
+
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            var ChangeRequestFromDb = _db.ChangeRequests.Find(id);
+            if (ChangeRequestFromDb == null)
+            {
+                return NotFound();
+            }
+            return View(ChangeRequestFromDb);
+        }
+
+        //POST
+        [HttpPost]
+
+        public IActionResult Edit(ChangeRequest obj)
+        {
+            if (ModelState.IsValid)
+
+            {
+                obj.SubmissionStatus = SubmissionStatus.Submitted;
+                _db.ChangeRequests.Update(obj);
+                _db.SaveChanges();
+
+                return RedirectToAction("Index");
+            }
+            return View();
         }
 
 

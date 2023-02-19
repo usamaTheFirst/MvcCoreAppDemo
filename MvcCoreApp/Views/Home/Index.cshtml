@@ -29,8 +29,10 @@
             <tr>
 
                 <th> Title</th>
-                <th>Status</th>
+                <th>Approval Status</th>
                 <th>Date Created</th>
+                <th>Submission Status</th>
+                <th></th>
             </tr>
 
         </thead>
@@ -43,12 +45,31 @@
                     <td width="40%">
                         @obj.WhatIsTheChange
                     </td>
-                    <td width="30%">
+                    <td width="15%">
                         @obj.Status
                     </td>
-                    <td width="30%">
+                    <td width="15%">
                         @obj.DateCreated
                     </td>
+                    
+                    <td width="15%">
+                        @obj.SubmissionStatus
+                    </td>
+                    @if(obj.SubmissionStatus == SubmissionStatus.Draft)
+                    {
+                        <td>
+                            <div class=" btn-group" role="group">
+                                <a class="btn btn-primary" asp-controller="Home" asp-action="Edit" asp-route-id="@obj.Id"><i class="bi bi-pencil-square"></i> Edit</a>
+                            </div>
+                        </td>
+                    }else{
+                    <td>
+                        <div class=" btn-group" role="group">
+                                <a class="btn btn-primary" asp-controller="Home" asp-action="View" asp-route-id="@obj.Id"><i class="bi bi-eye-fill"></i> View</a>
+                        </div>
+                    </td>
+                    }
+                    
 
                 </tr>
             }

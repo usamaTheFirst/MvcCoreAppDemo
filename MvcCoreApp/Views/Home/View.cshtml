@@ -11,8 +11,9 @@
 
     <div>
 
-        <form method="post" style="width : 100%">
-            <div class="text-danger border-danger" asp-validation-summary="All"></div>
+
+        <form method="post" asp-action="Edit" style="width : 100%">
+                    <div class="border-danger text-danger " asp-validation-summary="All"></div>
 
             <table style="width : 100% ; padding-left : 10px ; padding-right : 10px" border="1" cellpadding="10">
                 <tr style="background-color: darkcyan ; width : 100%">
@@ -91,7 +92,7 @@
                         <p style="font-weight : bold">Select Category</p>
                     </td>
                     <td style="text-align : left">
-                        <select asp-for="Category" style="width : 90%">
+                        <select disabled ="true" asp-for="Category" style="width : 90%" >
                             <option>Accounts</option>
                             <option>Backup</option>
                             <option>Business Applications</option>
@@ -273,20 +274,7 @@
             </div>
             <br />
             <br />
-            <div style="display : flex; align-items: end ; justify-content : end ; width : 100% ; padding : 5px;">
-
-                <td>
-                    <button style="width : 25%; height : 40px ; color : white; background-color : darkcyan ; border : 1px solid darkcyan; border-radius : 5px">
-                        Save as Draft
-                    </button>
-                </td>
-                &nbsp;
-                <td>
-                    <button type="submit" style="width : 25%; height : 40px ; color : white; background-color : green ; border : 1px solid green; border-radius : 5px">
-                        Submit
-                    </button>
-                </td>
-            </div>
+           
 
 
         </form>
@@ -353,10 +341,6 @@
         }
     }
 
+    $("select").prop("disabled", true);
 </script>
 
-@section Scripts{
-    @{
-        <partial name="_ValidationScriptsPartial" />
-    }
-}

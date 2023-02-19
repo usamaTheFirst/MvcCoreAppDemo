@@ -11,8 +11,9 @@
 
     <div>
 
-        <form method="post" style="width : 100%">
-            <div class="text-danger border-danger" asp-validation-summary="All"></div>
+
+        <form method="post" asp-action="Edit" style="width : 100%">
+                    <div class="border-danger text-danger " asp-validation-summary="All"></div>
 
             <table style="width : 100% ; padding-left : 10px ; padding-right : 10px" border="1" cellpadding="10">
                 <tr style="background-color: darkcyan ; width : 100%">
@@ -355,8 +356,3 @@
 
 </script>
 
-@section Scripts{
-    @{
-        <partial name="_ValidationScriptsPartial" />
-    }
-}
