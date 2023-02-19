@@ -1,13 +1,16 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using MvcCoreApp.Models;
 
 namespace MvcCoreApp.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDBContext : DbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-            : base(options)
+        public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options) : base(options)
         {
         }
+
+        public DbSet<ChangeRequest> ChangeRequests { get; set; }
+
     }
 }

@@ -1,344 +1,58 @@
-﻿@{
+﻿@model IEnumerable<ChangeRequest>
+@{
     ViewData["Title"] = "Change Managment System";
 }
 
-<div class="text-center"  style=" width : 100%;">
-    <div style="display : flex; align-items: end ; justify-content : center ; width : 100% ;border : 2px solid darkcyan ; padding : 5px;"  >
-        <img src="~/FFBL.jpg" height="80" width="230" style="display : inline;"/>
-        <h1 style=" padding-left : 20px;"> @ViewData["Title"]</h1>
+<div style="display : flex; align-items: end ; justify-content : center ; width : 100% ;border : 2px solid darkcyan ; padding : 5px;">
+        <img src="~/FFBL.jpg" height="80" width="230" style="display : inline;" />
+        <h1  style=" padding-left : 20px; color : darkcyan"> @ViewData["Title"]</h1>
     </div>
     <br />
-
-    <div >
-        <form style="width : 100%">
-            <table style="width : 100% ; padding-left : 10px ; padding-right : 10px" border="1" cellpadding="10">
-                <tr style="background-color: darkcyan ; width : 100%">
-                    <td colspan="4"> 
-                        <h6 style="color : white">Employee Details</h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="text-align : left">
-                        <p style="font-weight : bold">Request Date:</p>
-                    </td>
-                    <td style="text-align : left" >
-                        <p>08-Feb-2023</p>
-                   </td>
-
-
-                    <td style="text-align : left"> 
-                        <p style="font-weight : bold ">Status</p>
-                    </td>
-                    <td style="text-align : left">
-                        <p>Approved</p>
-                   </td>
-                </tr>
-
-
-
-                 <tr>
-                    <td style="text-align : left">
-                        <p style="font-weight : bold">Employee Name:</p>
-                    </td>
-                    <td style="text-align : left">
-                        <p>Usama Fayyaz</p>
-                   </td>
-
-
-                    <td style="text-align : left">
-                        <p style="font-weight : bold">Employee Number</p>
-                    </td>
-                    <td style="text-align : left">
-                        <p>30000624</p>
-                   </td>
-                </tr>
-
-
-                <tr>
-                    <td style="text-align : left">
-                        <p style="font-weight : bold">Unit</p>
-                    </td>
-                    <td style="text-align : left">
-                        <p >Services Managment</p>
-                    </td>
-
-
-                    <td style="text-align : left">
-                        <p style="font-weight : bold">Designation</p>
-                    </td>
-                    <td style="text-align : left">
-                        <p>MANAGEMENT ASSOCATE</p>
-                    </td>
-                </tr>
-
-            </table>
-
-            <br />
-            <br />
-            <table style="width : 100% ; padding-left : 10px ; padding-right : 10px" border="1" cellpadding="10">
-                <tr style="background-color: darkcyan ; width : 100%">
-                    <td colspan="4">
-                        <h6 style="color : white">ICT Change Management</h6>
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td style="text-align : left">
-                        <p style="font-weight : bold">Select Category</p>
-                    </td>
-                    <td style="text-align : left">
-                        <select style="width : 90%">
-                            <option>Accounts</option>
-                            <option>Backup</option>
-                            <option>Business Applications</option>
-                            <option>Data Center</option>
-                            <option>Email</option>
-                            <option>Hardware</option>
-                            <option>Security</option>
-
-                        </select>
-                    </td>
-
-
-                    <td style="text-align : left">
-                        <p style="font-weight : bold ">Sub Category</p>
-                    </td>
-                    <td style="text-align : left">
-                        <select style="width : 90%">
-                            <option>SAP ERP</option>
-                            <option>HCM Payroll</option>
-                            <option>SAP Fiori</option>
-                            <option>Qilk Sense</option>
-                            <option>Websites</option>
-                            <option>Interfaces</option>
-                            <option>Career Portal</option>
-
-                        </select>
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td style="text-align : left">
-                        <p style="font-weight : bold">Priority</p>
-                    </td>
-                    <td style="text-align : left">
-                        <select style="width : 90%">
-                            <option>Normal</option>
-                            <option>Urgent</option>
-                           
-
-                        </select>
-                    </td>
-
-
-                    <td style="text-align : left">
-                        <p style="font-weight : bold ">Location</p>
-                    </td>
-                    <td style="text-align : left">
-                        <select style="width : 90%" >
-                            <option>FFBL HO</option>
-                            <option>FFBL PS</option>
-                            <option>FML HO</option>
-                            <option>FPCL HO</option>
-                            <option>FPCL PS</option>
-                            
-
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="text-align : left">
-                        <p style="font-weight : bold">Expected Change</p>
-                    </td>
-                    <td style="text-align : left">
-                        <input type="date"  style="width : 90%"/>
-                    </td>
-
-
-                    <td style="text-align : left">
-                        <p style="font-weight : bold">Team Dependency</p>
-                    </td>
-                    <td style="text-align : left">
-                        <select style="width : 90%">
-                            <option>
-                                Operations
-                            </option>
-                            <option>
-                                Business Operations
-                            </option>
-                            <option>
-                                Services Managment
-                            </option>
-
-                            <option>
-                                None
-                            </option>
-                        </select>
-                    </td>
-                </tr>
-
-                
-            </table>
-
-
-             <br />
-            <br />
-
-            <table style="width : 100% ; padding-left : 10px ; padding-right : 10px" border="1" cellpadding="10">
-                <tr style="background-color: darkcyan ; width : 100%">
-                    <td colspan="4">
-                        <h6 style="color : white">Justification / Reason</h6>
-                    </td>
-                </tr>
-                
-                <tr >
-                    <td >
-                        <textarea style="width:100% ; margin-top : 10px; margin-bottom:0px;" rows="5" ></textarea>
-                    </td>
-                </tr>
-
-
-            </table>
-
-
-
-                     <br />
-            <br />
-
-            <table style="width : 100% ; padding-left : 10px ; padding-right : 10px" border="1" cellpadding="10">
-                <tr style="background-color: darkcyan ; width : 100%">
-                    <td colspan="4">
-                        <h6 style="color : white">Impact / Side Effect</h6>
-                    </td>
-                </tr>
-                
-                <tr >
-                    <td >
-                        <textarea style="width:100% ; margin-top : 10px; margin-bottom:0px;" rows="5" ></textarea>
-                    </td>
-                </tr>
-
-
-            </table>
-
-
-           
-
-
-            <br />
-            <br />
-
-            <table style="width : 100% ; padding-left : 10px ; padding-right : 10px" border="1" cellpadding="10">
-                <tr style="background-color: darkcyan ; width : 100%">
-                    <td colspan="4">
-                        <h6 style="color: white">Rollback Strategy</h6>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <textarea style="width:100% ; margin-top : 10px; margin-bottom:0px;" rows="5"></textarea>
-                    </td>
-                </tr>
-
-
-            </table>
-
-            <br />
-            <br />
-
-            <div style="display : flex; align-items: end ; justify-content : start ; width : 100% ;border : 2px solid grey ; padding : 5px;">
-                <table>
-                    <tr>
-                        <td style="padding-right : 20px"> <h6>Attachment: </h6></td>
-                        <td>
-                            <input type="file" multiple />
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <br />
-            <br />
-            <div style="display : flex; align-items: end ; justify-content : end ; width : 100% ; padding : 5px;">
-               
-                <td>
-                    <button style="width : 25%; height : 40px ; color : white; background-color : darkcyan ; border : 1px solid darkcyan; border-radius : 5px">
-                        Save as Draft
-                    </button>
-                </td>
-                &nbsp;
-                <td >
-                    <button style="width : 25%; height : 40px ; color : white; background-color : green ; border : 1px solid green; border-radius : 5px">
-                Submit
-            </button>
-                </td>
-            </div>
-
-
-        </form>
+<div class="container p-2"></div>
+<div class="row pt-2">
+    <div class="col-6">
+        <h2  style="color : darkcyan">Change Requests</h2>
     </div>
-    <br />
-    <br />
-    <div style="display : flex; align-items: center ; justify-content : start ; width : 100% ; ">
-        <img id="route_icon" src="~/details_up.png" height="13px" width="13px" onclick="showRouteDetails()" />
-       &nbsp;
-        <span style="font-weight : bold ; align-content : center; align-items : center"  onclick="showRouteDetails()">Show Approval Route</span>
-
+    <div class="col-6 text-end">
+        <a asp-controller="Home" asp-action="Create" class="btn btn-primary" style="background : darkcyan"> <i class="bi bi-plus-circle"></i> &nbsp; Create New Change Request</a>
     </div>
 
-    <div id="route_container" style="display : none">
-        <table style="width : 100% ; padding-left : 10px ; padding-right : 10px" border="1" cellpadding="5">
-            <tr style="background-color: darkcyan ; width : 100% ; ">
-                <td colspan="3">
-                    <h6 style="color : white ; text-align : start">Approval Details</h6>
-                </td>
-            </tr>
+
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <table class="table table-bordered table-striped" style="width:100%">
+
+        <thead>
             <tr>
-                <td style="font-weight: bold;">Level</td>
-                <td style="font-weight: bold;">Task</td>
-                <td style="font-weight: bold;">Approver</td>
 
+                <th> Title</th>
+                <th>Status</th>
+                <th>Date Created</th>
             </tr>
-            
-             <tr>
-                <td style="font-weight: bold;">1.</td>
-                <td style="  color : green">Review</td>
-                <td style="  color : green">naeem iqbal/it/ho/ffbl</td>
 
-            </tr>
-            
-            <tr>
-                <td style="font-weight: bold;">2.</td>
-                <td style="  color : green">Approve</td>
-                <td style="  color : blue">sajid malik/it/ho/ffbl</td>
+        </thead>
 
-            </tr>
-        </table>
-    </div>
- 
+        <tbody>
 
-    
-  
+            @foreach (var obj in Model)
+            {
+                <tr>
+                    <td width="40%">
+                        @obj.WhatIsTheChange
+                    </td>
+                    <td width="30%">
+                        @obj.Status
+                    </td>
+                    <td width="30%">
+                        @obj.DateCreated
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
 </div>
-
-
-<script>
-    var showRoute = false;
-
-
-    function showRouteDetails() {
-
-        showRoute = !showRoute;
-
-        if (showRoute) {
-            document.getElementById("route_icon").src = 'details_down.png';
-            document.getElementById('route_container').style.display = "initial";
-        } else {
-            document.getElementById("route_icon").src = 'details_up.png';
-             document.getElementById('route_container').style.display = "none";
-        }
-    }
-
-</script>
