@@ -19,6 +19,8 @@ namespace MvcCoreApp.Controllers
         public IActionResult Index()
         {
             IEnumerable<ChangeRequest> objCatList = _db.ChangeRequests;
+            objCatList.OrderBy(o => o.DateCreated);
+            
             return View(objCatList);
         }
 
